@@ -66,7 +66,7 @@ protobuf-3.3.0.tar.gz: https://files.pythonhosted.org/packages/56/28/6263d846f60
    chmod +x install.sh
    ./install.sh
    ```
-8. put protos in dir elk-huawei-plugin and transfer protos,then generate the file of proto, put these in dir /usr/elk/logstash-5.5.0/huawei-test/protos
+8. put protos in dir elk-huawei-plugin and transfer protos,then generate the file of proto, put these in dir /usr/elk/logstash-5.5.0/huawei-test/protos  
    proto files:https://github.com/HuaweiDatacomm/proto
    ```
    cd /elk-huawei-plugin
