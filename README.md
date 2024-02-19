@@ -7,7 +7,7 @@ the huawei plugin for elk to collect and process information from huawei devices
 ### **Prerequisites**
 
 - OS : Ubuntu, CentOS, Suse, Red Hat
-- Java : 1.8 (warning: do not install in dir root)
+- Java : 1.8 
 - Python : 3.6
 - Ruby :2.7
 
@@ -28,6 +28,10 @@ Platform-0.4.2.gem: https://rubygems.org/downloads/Platform-0.4.2.gem
 protoc-2.6.1.gem: https://rubygems.org/downloads/protoc-2.6.1.gem  
 ruby-protocol-buffers-1.6.1.gem: https://rubygems.org/downloads/ruby-protocol-buffers-1.6.1.gem  
 google-protobuf-3.5.0.pre-java.gem: https://rubygems.org/downloads/google-protobuf-3.5.0.pre-java.gem
+glibc-2.14.tar.gz: https://ftp.gnu.org/gnu/libc/glibc-2.14.tar.gz
+grpcio-1.4.0-cp36-cp36m-manylinux1_x86_64.whl: https://files.pythonhosted.org/packages/2a/91/d82cba0a0f725d59c18641d58a5f3b41e930dfb007e8ca20756370c7d3cc/grpcio-1.4.0-cp36-cp36m-manylinux1_x86_64.whl
+grpcio-1.4.0-cp35-cp35m-manylinux1_x86_64.whl: https://files.pythonhosted.org/packages/2a/91/d82cba0a0f725d59c18641d58a5f3b41e930dfb007e8ca20756370c7d3cc/grpcio-1.4.0-cp35-cp35m-manylinux1_x86_64.whl  
+six-1.10.0-py2.py3-none-any.whl: https://files.pythonhosted.org/packages/c8/0a/b6723e1bc4c516cb687841499455a8505b44607ab535be01091c0f24f079/six-1.10.0-py2.py3-none-any.whl  
 
 
 4. extract elk:
@@ -62,13 +66,14 @@ google-protobuf-3.5.0.pre-java.gem: https://rubygems.org/downloads/google-protob
    ./install.sh
    ```
 8. put protos in dir elk-huawei-plugin and transfer protos,then generate the file of proto, put these in dir /usr/elk/logstash-5.5.0/huawei-test/protos
+   proto files:https://github.com/HuaweiDatacomm/proto
    ```
    cd /elk-huawei-plugin
    java -Dfile.encoding=utf-8 -jar proto3to2.jar *.proto
    ruby-protoc *.proto
    cp -f *.proto *.pb.rb /usr/elk/logstash-5.5.0/huawei-test/protos/
    ```
-9. add elasticsearch's configuration(warning:pay attention to the spaces):
+10. add elasticsearch's configuration(warning:pay attention to the spaces):
    ```
    cd /usr/elk/elasticsearch-5.5.0/config
    vim elasticsearch.yml
@@ -76,7 +81,7 @@ google-protobuf-3.5.0.pre-java.gem: https://rubygems.org/downloads/google-protob
    http.port: 9200
    bootstrap.system_call_filter: false
    ```
-10. add kibana's configuration(warning: pay attention to the spaces):
+11. add kibana's configuration(warning: pay attention to the spaces):
     ```
     cd /usr/elk/kibana-5.5.0-linux-x86_64/config
     vim kibana.yml
@@ -84,7 +89,7 @@ google-protobuf-3.5.0.pre-java.gem: https://rubygems.org/downloads/google-protob
     server.host: "127.0.0.1"
     elasticsearch.url: "http://127.0.0.1:9200"
     ```
-11. download grpcio and protobuf
+12. download grpcio and protobuf
     ```
     pip3 install grpcio
     pip3 install protobuf
