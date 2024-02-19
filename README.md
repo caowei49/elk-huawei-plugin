@@ -26,7 +26,7 @@ logstash: https://artifacts.elastic.co/downloads/logstash/logstash-5.5.0.tar.gz
 kibana: https://artifacts.elastic.co/downloads/kibana/kibana-5.5.0-linux-x86_64.tar.gz  
 Platform-0.4.2.gem: https://rubygems.org/downloads/Platform-0.4.2.gem  
 protoc-2.6.1.gem: https://rubygems.org/downloads/protoc-2.6.1.gem  
-ruby-protocol-buffers-1.6.1.gem: https://rubygems.org/downloads/ruby-protocol-buffers-1.6.1.gem
+ruby-protocol-buffers-1.6.1.gem: https://rubygems.org/downloads/ruby-protocol-buffers-1.6.1.gem  
 google-protobuf-3.5.0.pre-java.gem: https://rubygems.org/downloads/google-protobuf-3.5.0.pre-java.gem
 
 
